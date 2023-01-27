@@ -6,27 +6,26 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/01/25 18:15:26 by yizhang       ########   odam.nl          #
+#    Updated: 2023/01/27 16:47:19 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = game
 CC = gcc
 FLAG = -Werror -Wall -Wextra
-OPENGL = OPENGL
-MLX = -Imlx
-APPKIT = AppKit
-NAME = 
-SRC = 
+LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
+LIB = MLX42/libmlx42.a
+SRC = main.c
 OBJ = ${SRC:%.c=%.o}
 
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
-		${CC} ${OBJ} ${MLX} ${MLX} -framework ${OPENGL} -framework ${appkit}
+${NAME}: ${SRC}
+		${CC} ${FLAG} ${LIB} ${LINKS} ${SRC} -o ${NAME}
 
-${OBJ}: ${SRC}
-		${CC} ${FLAG} ${MLX} -c $< -o $@
+${LIB}:
+	${MAKE} -C MLX42
 
 clean:
 	rm -rf ${OBJ}
