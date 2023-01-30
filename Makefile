@@ -13,7 +13,7 @@
 NAME = game
 CC = gcc
 FLAG = -Werror -Wall -Wextra
-LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
+LINKS = -lglfw3 -lopengl32 -lgdi32
 LIB = MLX42/libmlx42.a
 SRC = main.c
 OBJ = ${SRC:%.c=%.o}
@@ -28,9 +28,11 @@ ${LIB}:
 	${MAKE} -C MLX42
 
 clean:
+	clean -C MLX42
 	rm -rf ${OBJ}
 
 fclean: clean
+	fclean -C MLX42
 	rm -rf ${NAME}
 
 re:fclean all
