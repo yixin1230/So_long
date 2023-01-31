@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/01/31 14:24:32 by yizhang       ########   odam.nl          #
+#    Updated: 2023/01/31 15:07:14 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,23 +22,23 @@ OBJ = ${SRC:%.c=%.o}
 
 all: ${NAME}
 
-${NAME}: ${SRC}
+${NAME}: ${SRC} ${LIB} ${LIBFT}
 	@${CC} ${FLAG} ${LIB} ${LIBFT} ${LINKS} ${SRC} -o ${NAME}
 
 ${LIB}:
-	@${MAKE} -C MLX42
+	@make -C MLX42
 
 ${LIBFT}:
 	@make bonus -C libft
 
 clean:
-	@clean -C MLX42
-	@clean -C libft
+	@make clean -C MLX42
+	@make clean -C libft
 	@rm -rf ${OBJ}
 
 fclean: clean
-	@fclean -C MLX42
-	@clean -C libft
+	@make fclean -C MLX42
+	@make fclean -C libft
 	@rm -rf ${NAME}
 
 re:fclean all

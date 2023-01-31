@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:59:02 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/01/31 17:36:18 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,11 @@ int32_t	main(int argc, char **argv)
 	map = read_map(argv[1]);
 	s_map = ft_split(map, '\n');
 	free(map);
+	//find if all the character are validate(0,1,E,P,C,\n)
+	//find how many 'C' inside map, store it in game->c_count
+	//find error, not sure if it's really matter
+
+	//find rows and columns
+	//find error,about if (x,y) at a wall, not sure if it's really matter
 	exit(0);
 }
