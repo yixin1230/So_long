@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/31 17:25:23 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 18:13:46 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
+#include <unistd.h>
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+t_list	*ft_lstnew(void *content)
 {
-	char	**s_map;
-}t_game;
+	t_list	*node;
 
-char	*read_map(char *map_path);
-
-#endif
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = (t_list *)content;
+	node->next = NULL;
+	return (node);
+}

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_memcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/11/04 18:26:29 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/11/04 18:26:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{	
+	size_t		i;
+	char		*tmp_dst;
+	const char	*tmp_src;
 
-typedef struct game
-{
-	char	**s_map;
-}t_game;
-
-char	*read_map(char *map_path);
-
-#endif
+	i = 0;
+	tmp_dst = (char *)dst;
+	tmp_src = (char *)src;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		tmp_dst[i] = tmp_src[i];
+		i++;
+	}
+	return (dst);
+}

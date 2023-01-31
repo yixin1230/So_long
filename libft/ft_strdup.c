@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/14 13:29:10 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:18:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+char	*ft_strdup(const char *s1)
 {
-	char	**s_map;
-}t_game;
+	char	*p;
+	int		len;
+	int		i;
 
-char	*read_map(char *map_path);
-
-#endif
+	len = ft_strlen(s1);
+	i = 0;
+	p = malloc(len + 1 * sizeof(char));
+	if (p == 0)
+		return (NULL);
+	while (s1[i])
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
+}

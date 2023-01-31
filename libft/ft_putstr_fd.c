@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/21 16:24:15 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:37:04 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	**s_map;
-}t_game;
-
-char	*read_map(char *map_path);
-
-#endif
+	write(fd, s, ft_strlen(s));
+}

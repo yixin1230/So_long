@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_memset.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/11/04 18:26:00 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/11/04 18:26:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+void	*ft_memset(void *str, int c, size_t n)
 {
-	char	**s_map;
-}t_game;
+	size_t			i;
+	unsigned char	*tmp;
 
-char	*read_map(char *map_path);
-
-#endif
+	i = 0;
+	tmp = (unsigned char *)str;
+	while (i < n)
+	{
+		tmp[i] = (unsigned char)c;
+		i++;
+	}
+	return (str = tmp);
+}

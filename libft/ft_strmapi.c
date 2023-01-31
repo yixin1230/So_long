@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/21 16:22:58 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:22:50 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	**s_map;
-}t_game;
+	size_t	i;
+	size_t	len;
+	char	*ret;
 
-char	*read_map(char *map_path);
-
-#endif
+	i = 0;
+	len = ft_strlen(s);
+	if (!s || !f)
+		return (NULL);
+	ret = ft_calloc (len + 1, sizeof(char));
+	if (!ret)
+		return (NULL);
+	else
+	{
+		while (i < len)
+		{
+			ret[i] = f(i, s[i]);
+			i++;
+		}
+		ret[i] = '\0';
+	}
+	return (ret);
+}

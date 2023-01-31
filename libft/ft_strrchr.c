@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_strrchr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/05 18:21:52 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:24:12 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+char	*ft_strrchr(const char *s, int c)
 {
-	char	**s_map;
-}t_game;
+	const char	*tmp;
 
-char	*read_map(char *map_path);
-
-#endif
+	tmp = NULL;
+	while (*s)
+	{		
+		if (*s == (char)c)
+			tmp = s;
+		s++;
+	}
+	if (*s == '\0' && (char)c == '\0')
+	{
+		tmp = s;
+		return ((char *)tmp);
+	}
+	return ((char *)tmp);
+}

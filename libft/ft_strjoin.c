@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/17 14:27:29 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:20:10 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	**s_map;
-}t_game;
+	int		i;
+	int		len;
+	char	*s3;
 
-char	*read_map(char *map_path);
-
-#endif
+	i = 0;
+	len = 0;
+	s3 = malloc((ft_strlen(s1)+ft_strlen(s2) + 1) * sizeof(char));
+	if (!s3)
+		return (s3);
+	while (s1[i])
+	{
+		s3[len] = s1[i];
+		i++;
+		len++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		s3[len] = s2[i];
+		i++;
+		len++;
+	}
+	s3[len] = '\0';
+	return (s3);
+}

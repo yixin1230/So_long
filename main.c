@@ -6,11 +6,12 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 13:42:27 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/01/31 14:59:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
 /* 
 1.map,read map.
 2.(x,y),use split to add xand y.
@@ -24,14 +25,21 @@
 10.improving the user interface
 */
 
+void	lecks(void)
+{
+	system("lecks -q game");
+}
+
 int32_t	main(int argc, char **argv)
 {
-	//mlx_t	*mlx;
-	//mlx_image_t	*img;
 	char	*map;
+	char	**s_map;
 
+	atexit(lecks);
 	if (argc != 2)
 		exit (1);
 	map = read_map(argv[1]);
-	printf("map:\n%s",map);
+	s_map = ft_split(map, '\n');
+	free(map);
+	exit(0);
 }

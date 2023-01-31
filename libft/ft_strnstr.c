@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 14:39:37 by yizhang       ########   odam.nl         */
+/*   Created: 2022/10/05 18:21:57 by yizhang       #+#    #+#                 */
+/*   Updated: 2022/10/31 09:23:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct game
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	**s_map;
-}t_game;
+	char	*hay;
+	char	*n;
 
-char	*read_map(char *map_path);
-
-#endif
+	hay = (char *)haystack;
+	n = (char *)needle;
+	if (*n == 0)
+		return (hay);
+	while (*hay && len)
+	{
+		if (ft_strlen(needle) > len)
+			return (NULL);
+		if (ft_strncmp(hay, n, ft_strlen(needle)) == 0)
+			return (hay);
+		hay++;
+		len--;
+	}
+	return (NULL);
+}
