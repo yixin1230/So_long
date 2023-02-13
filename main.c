@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 15:48:37 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 17:43:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,24 @@ void	hook(void *all)
 	t_game	*tmp;
 
 	tmp = all;
-	print_all_map(all);
+	print_all_map(tmp);
+}
+
+void	key(void *all)
+{
+	t_game	*tmp;
+
+	tmp = all;
+	if (mlx_is_key_down(tmp->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(tmp->mlx);
+	if (mlx_is_key_down(tmp->mlx, MLX_KEY_W))
+		tmp->assets.noonoo->instances[0].y -= 5;
+	if (mlx_is_key_down(tmp->mlx, MLX_KEY_S))
+		tmp->assets.noonoo->instances[0].y += 5;
+	if (mlx_is_key_down(tmp->mlx, MLX_KEY_A))
+		tmp->assets.noonoo->instances[0].x -= 5;
+	if (mlx_is_key_down(tmp->mlx, MLX_KEY_D))
+		tmp->assets.noonoo->instances[0].x += 5;
 }
 
 int32_t	main(int argc, char **argv)
@@ -60,6 +77,7 @@ int32_t	main(int argc, char **argv)
 		exit(1);
 	load_assets(&all);
 	mlx_loop_hook(all.mlx, &hook, &all);
+	mlx_loop_hook(all.mlx, &key, &all);
 	mlx_loop(all.mlx);
 	mlx_terminate(all.mlx);
 	return (0);

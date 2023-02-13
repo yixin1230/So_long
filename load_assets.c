@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 12:19:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 15:46:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 15:54:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <fcntl.h>
 
 mlx_image_t	*xpm_to_image(mlx_t *mlx, char	*img_path);
-void	load_assets(t_game *all);
-void	print_image(t_game *all, int x, int y);
-void	print_all_map(t_game *all);
-int	open_image(char	*str);
+void		load_assets(t_game *all);
+void		print_image(t_game *all, int x, int y);
+void		print_all_map(t_game *all);
+int			open_image(char	*str);
 
 int	open_image(char	*str)
 {
