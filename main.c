@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 12:18:29 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 13:22:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@
 void	lecks(void)
 {
 	system("lecks -q game");
+}
+
+
+void	hook(void *all)
+{
+	t_game	*tmp;
+
+	tmp = all;
+	print_all_map(all);
 }
 
 int32_t	main(int argc, char **argv)
@@ -53,16 +62,14 @@ int32_t	main(int argc, char **argv)
 	all.screen_y = 64 * all.colums;
 	all.mlx = mlx_init(all.screen_x, all.screen_y, "so_long", 1);
 	if (!all.mlx)
-		exit(1);
-	
 	//convert an existing image file to XPM3 and convert an existing XPM3 file to XPM42.
 	//load every xpm files using  mlx_load_xpm42
 	//convert their textures to a display image using mlx_texture_to_image.
-	load_assets();
-	xpm_to_image();
-	print_one_image();
-	print_all_map();
+	load_assets(&all);
+	
 	//put all mlx_image_t in map, loop though the map print image to window one by one
+	//print_all_map(&all);
+	mlx_loop_hook(all.mlx, &hook, &all);
 	//awsd
 	mlx_loop(all.mlx);
 	
