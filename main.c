@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 15:25:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 15:48:37 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ int32_t	main(int argc, char **argv)
 	if (!all.mlx)
 		exit(1);
 	load_assets(&all);
-
-	mlx_image_to_window(all.mlx, xpm_to_image(all.mlx, "assets/noonoo.xpm42"), 0, 0);
-
+	mlx_loop_hook(all.mlx, &hook, &all);
 	mlx_loop(all.mlx);
 	mlx_terminate(all.mlx);
 	return (0);

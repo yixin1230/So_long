@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 12:19:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 15:05:40 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 15:46:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void	load_assets(t_game *all)
 
 void	print_image(t_game *all, int x, int y)
 {
-	if (all->s_map[x][y] == '1')
+	if (all->s_map[y][x] == '1')
 		mlx_image_to_window(all->mlx, all->assets.wall, x * 64, y * 64);
-	else if (all->s_map[x][y] == 'C')
+	else if (all->s_map[y][x] == 'C')
 		mlx_image_to_window(all->mlx, all->assets.rice_ball, x * 64, y * 64);
-	else if (all->s_map[x][y] == 'E')
+	else if (all->s_map[y][x] == 'E')
 		mlx_image_to_window(all->mlx, all->assets.home, x * 64, y * 64);
-	else if (all->s_map[x][y] == 'P')
+	else if (all->s_map[y][x] == 'P')
 		mlx_image_to_window(all->mlx, all->assets.noonoo, x * 64, y * 64);
 }
 
@@ -76,10 +76,10 @@ void	print_all_map(t_game *all)
 	int y;
 
 	y = 0;
-	while (y < all->rows)
+	while (y < all->colums)
 	{
 		x = 0;
-		while (x < all->colums)
+		while (x < all->rows)
 		{
 			print_image(all, x, y);
 			x++;
