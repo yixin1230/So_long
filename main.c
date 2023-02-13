@@ -6,15 +6,15 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/01/31 17:36:18 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 12:18:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 /* 
-1.map,read map.
-2.(x,y),use split to add xand y.
+1.map,read map.$
+2.(x,y),use split to add xand y.$
 3.read map and find pacman inside map,return the (x,y)
 4.change (x,y) to a new place, and delete the old one 
 5.move the pacman based on the key"w.a.s.d",+-(x,y)
@@ -33,19 +33,38 @@ void	lecks(void)
 int32_t	main(int argc, char **argv)
 {
 	char	*map;
-	char	**s_map;
+	t_game	all;
 
-	atexit(lecks);
+	//atexit(lecks);
 	if (argc != 2)
 		exit (1);
 	map = read_map(argv[1]);
-	s_map = ft_split(map, '\n');
+	all.s_map = ft_split(map, '\n');
 	free(map);
+	
 	//find if all the character are validate(0,1,E,P,C,\n)
 	//find how many 'C' inside map, store it in game->c_count
 	//find error, not sure if it's really matter
 
 	//find rows and columns
 	//find error,about if (x,y) at a wall, not sure if it's really matter
+	count_rows_colums(all.s_map, &all);
+	all.screen_x = 64 * all.rows;
+	all.screen_y = 64 * all.colums;
+	all.mlx = mlx_init(all.screen_x, all.screen_y, "so_long", 1);
+	if (!all.mlx)
+		exit(1);
+	
+	//convert an existing image file to XPM3 and convert an existing XPM3 file to XPM42.
+	//load every xpm files using  mlx_load_xpm42
+	//convert their textures to a display image using mlx_texture_to_image.
+	load_assets();
+	xpm_to_image();
+	print_one_image();
+	print_all_map();
+	//put all mlx_image_t in map, loop though the map print image to window one by one
+	//awsd
+	mlx_loop(all.mlx);
+	
 	exit(0);
 }
