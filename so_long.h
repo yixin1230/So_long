@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 13:15:19 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 14:51:19 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ typedef struct s_game
 	char		**s_map;
 	t_assets	assets;
 	t_assets	old_assets;
-	long		rows;
-	long		colums;
-	long		screen_x;
-	long		screen_y;
+	int		rows;
+	int		colums;
+	int		screen_x;
+	int		screen_y;
 }t_game;
 
 char		*read_map(char *map_path);
@@ -45,5 +45,6 @@ mlx_image_t	*xpm_to_image(mlx_t *mlx, char	*img_path);
 void		load_assets(t_game *all);
 void		print_image(t_game *all, int x, int y);
 void		print_all_map(t_game *all);
+int		open_image(char	*str);
 
 #endif

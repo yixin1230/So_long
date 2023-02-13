@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 10:41:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 11:14:22 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/13 14:31:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	count_rows_colums(char **str, t_game *all)
 {
-	int	i;
+	int	x;
 
-	i = 0;
+	x = 0;
 	if (!all || !*str)
 		return ;
-	while(str[i])
-		i++;
+	while(str[x])
+		x++;
 	all->rows = ft_strlen(str[0]);
-	all->colums = i;
+	all->colums = x;
 }
