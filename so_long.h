@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/14 17:31:26 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/14 18:09:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ void		delete_old_assets(t_game *all);
 void		print_image(t_game *all, int x, int y);
 void		print_all_map(t_game *all);
 int			open_image(char	*str);
-
+void		move_up(t_game *all);
+void		move_down(t_game *all);
+void		move_left(t_game *all);
+void		move_right(t_game *all);
+void	key_hook_move(mlx_key_data_t key, void *tmp);
 #endif

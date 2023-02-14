@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/14 17:42:39 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/14 18:09:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int32_t	main(int argc, char **argv)
 		exit(1);
 	load_assets(&all);
 	mlx_loop_hook(all.mlx, &hook, &all);
-	mlx_loop_hook(all.mlx, &key, &all);
+	mlx_key_hook(all.mlx, &key_hook_move, &all);
 	mlx_loop(all.mlx);
 	mlx_terminate(all.mlx);
 	return (0);
