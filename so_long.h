@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 15:54:35 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/14 17:31:26 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char		*read_map(char *map_path);
 void		count_rows_colums(char **str, t_game *all);
 mlx_image_t	*xpm_to_image(mlx_t *mlx, char	*img_path);
 void		load_assets(t_game *all);
+void		delete_old_assets(t_game *all);
 void		print_image(t_game *all, int x, int y);
 void		print_all_map(t_game *all);
 int			open_image(char	*str);

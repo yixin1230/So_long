@@ -6,25 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/13 17:43:58 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/14 17:42:39 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 #include <string.h>
-/* 
-1.map,read map.$
-2.(x,y),use split to add xand y.$
-3.read map and find pacman inside map,return the (x,y)
-4.change (x,y) to a new place, and delete the old one 
-5.move the pacman based on the key"w.a.s.d",+-(x,y)
-6.check the illegal moves,where is wall ,ghost
-7.set how to win the game,eat all the pills,count pills
-8.main loop
-9.moving the ghosts in all possible directions,find ghosts will find all the ghosts and return.
-10.improving the user interface
-*/
 
 void	lecks(void)
 {
@@ -48,20 +36,19 @@ void	key(void *all)
 	if (mlx_is_key_down(tmp->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(tmp->mlx);
 	if (mlx_is_key_down(tmp->mlx, MLX_KEY_W))
-		tmp->assets.noonoo->instances[0].y -= 5;
+		tmp->assets.noonoo->instances[0].y -= 64;
 	if (mlx_is_key_down(tmp->mlx, MLX_KEY_S))
-		tmp->assets.noonoo->instances[0].y += 5;
+		tmp->assets.noonoo->instances[0].y += 64;
 	if (mlx_is_key_down(tmp->mlx, MLX_KEY_A))
-		tmp->assets.noonoo->instances[0].x -= 5;
+		tmp->assets.noonoo->instances[0].x -= 64;
 	if (mlx_is_key_down(tmp->mlx, MLX_KEY_D))
-		tmp->assets.noonoo->instances[0].x += 5;
+		tmp->assets.noonoo->instances[0].x += 64;
 }
 
 int32_t	main(int argc, char **argv)
 {
 	char	*map;
 	t_game	all;
-
 
 	//atexit(lecks);
 	if (argc != 2)
