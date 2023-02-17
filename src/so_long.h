@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 13:55:46 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 15:19:20 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ typedef struct s_game
 	t_assets	old_assets;
 	int			rows;
 	int			colums;
-	int			screen_x;
-	int			screen_y;
 	int			c_count;
+	int			e_count;
+	int			p_count;
 	int			e_x;
 	int			e_y;
 	int			move_count;
@@ -59,5 +59,7 @@ void		move_left(t_game *all);
 void		move_right(t_game *all);
 int			check_flag(t_game *all, char *c1, char *c2);
 void		key_hook_move(mlx_key_data_t key, void *tmp);
+void		print_error(void);
+void		check_error(t_game *all);
 
 #endif
