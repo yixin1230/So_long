@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 15:19:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 15:51:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_game
 char		*read_map(char *map_path);
 void		count_rows_colums(char **str, t_game *all);
 void		count_c_e(char **str, t_game *all);
+void		check_count_c_e_p(char c, t_game *all);
 mlx_image_t	*xpm_to_image(mlx_t *mlx, char	*img_path);
 void		load_assets(t_game *all);
 void		delete_old_assets(t_game *all);

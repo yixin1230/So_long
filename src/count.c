@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 10:41:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 15:48:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 15:54:01 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	count_c_e(char **str, t_game *all);
 void	count_rows_colums(char **str, t_game *all);
+void	check_count_c_e_p(char c, t_game *all);
 
 void	count_rows_colums(char **str, t_game *all)
 {
