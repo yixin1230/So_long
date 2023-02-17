@@ -6,11 +6,12 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 10:41:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 12:36:01 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 13:55:55 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 void	count_c_e(char **str, t_game *all);
 void	count_rows_colums(char **str, t_game *all);
 
@@ -21,7 +22,7 @@ void	count_rows_colums(char **str, t_game *all)
 	x = 0;
 	if (!all || !*str)
 		return ;
-	while(str[x])
+	while (str[x])
 		x++;
 	all->rows = ft_strlen(str[0]);
 	all->colums = x;
@@ -43,8 +44,8 @@ void	count_c_e(char **str, t_game *all)
 				all->c_count++;
 			if (str[y][x] == 'E')
 			{
-				all->E_x = x;
-				all->E_y = y;
+				all->e_x = x;
+				all->e_y = y;
 			}
 		}
 	}

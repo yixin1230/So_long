@@ -6,15 +6,15 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 12:57:23 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 13:55:46 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include "ft_printf/ft_printf.h"
+# include "../MLX42/include/MLX42/MLX42.h"
+# include "../ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -34,14 +34,14 @@ typedef struct s_game
 	char		**s_map;
 	t_assets	assets;
 	t_assets	old_assets;
-	int		rows;
-	int		colums;
-	int		screen_x;
-	int		screen_y;
-	int		c_count;
-	int		E_x;
-	int		E_y;
-	int		move_count;
+	int			rows;
+	int			colums;
+	int			screen_x;
+	int			screen_y;
+	int			c_count;
+	int			e_x;
+	int			e_y;
+	int			move_count;
 }t_game;
 
 char		*read_map(char *map_path);

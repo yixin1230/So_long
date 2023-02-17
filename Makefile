@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/17 12:59:05 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/17 13:47:31 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,15 @@ FLAG = -Werror -Wall -Wextra
 LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
 LIB = MLX42/libmlx42.a
 FT_PRINTF = ft_printf/libftprintf.a
+SRC_DIR = src/
 SRC = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c
-OBJ = ${SRC:%.c=%.o}
+SRC_PATH = ${SRC:%=${SRC_DIR}%}
 
 
 all: ${NAME}
 
-${NAME}: ${SRC} ${LIB} ${FT_PRINTF}
-	@${CC} ${FLAG} ${LIB} ${FT_PRINTF} ${LINKS} ${SRC} -o ${NAME}
+${NAME}: ${SRC_PATH} ${LIB} ${FT_PRINTF}
+	@${CC} ${FLAG} ${LIB} ${FT_PRINTF} ${LINKS} ${SRC_PATH} -o ${NAME}
 
 ${LIB}:
 	@make -C MLX42

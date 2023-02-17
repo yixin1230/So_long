@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:22:00 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 12:46:54 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 13:55:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	print_image(t_game *all, int x, int y)
 void	print_all_map(t_game *all)
 {
 	int	x;
-	int y;
+	int	y;
 
 	y = 0;
 	delete_old_assets(all);
