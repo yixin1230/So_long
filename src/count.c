@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 10:41:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 15:54:01 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 17:19:32 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	check_count_c_e_p(char c, t_game *all)
 		print_error();
 }
 
-void	count_c_e(char **str, t_game *all)
+void	count_c_e_p(char **str, t_game *all)
 {
 	int	x;
 	int	y;
