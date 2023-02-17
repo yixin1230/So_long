@@ -3,18 +3,18 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
+/*   By: yizhang <zhaozicen951230@gmail.com>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 18:24:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2022/11/04 18:24:30 by yizhang       ########   odam.nl         */
+/*   Updated: 2022/11/18 15:52:36 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h> //for size_t & free
-# include <unistd.h> //for malloc
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

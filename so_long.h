@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 12:48:00 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 12:57:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 12:47:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 13:00:55 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int	check_flag(t_game *all, char *c1, char *c2)
 				if (*c2 != 'E')
 				{
 					all->move_count++;
+					ft_printf("move:%i\n",all->move_count);
 					*c2 = 'P';
 					*c1 = '0';
 				}

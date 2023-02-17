@@ -5,40 +5,34 @@
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/17 12:59:05 by yizhang       ########   odam.nl          #
+#    Created: 2022/12/01 08:30:47 by yizhang       #+#    #+#                  #
+#    Updated: 2022/12/08 14:58:47 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = game
+NAME = libftprintf.a
 CC = gcc
-FLAG = -Werror -Wall -Wextra
-LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
-LIB = MLX42/libmlx42.a
-FT_PRINTF = ft_printf/libftprintf.a
-SRC = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c
-OBJ = ${SRC:%.c=%.o}
-
+FLAGS = -Wall -Werror -Wextra
+LIBFT = libft/libft.a
+SRCS = ft_printf.c ft_utils.c
+OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${SRC} ${LIB} ${FT_PRINTF}
-	@${CC} ${FLAG} ${LIB} ${FT_PRINTF} ${LINKS} ${SRC} -o ${NAME}
+${NAME}: ${OBJS} 
+	make -C libft
+	cp ${LIBFT} ${NAME}
+	ar rcs ${NAME} ${OBJS}
 
-${LIB}:
-	@make -C MLX42
-
-${FT_PRINTF}:
-	@make -C ft_printf
+${OBJS}: ${SRCS}
+	${CC} ${FLAGS} -c ${SRCS}
 
 clean:
-	@make clean -C MLX42
-	@make clean -C ft_printf
-	@rm -rf ${OBJ}
+	rm -rf ${OBJS} 
+	make clean -C libft
 
 fclean: clean
-	@make fclean -C MLX42
-	@make fclean -C ft_printf
-	@rm -rf ${NAME}
+	rm -rf ${NAME}
+	make fclean -C libft
 
 re:fclean all
