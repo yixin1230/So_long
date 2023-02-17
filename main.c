@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/14 18:09:58 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 10:22:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,6 @@ void	hook(void *all)
 
 	tmp = all;
 	print_all_map(tmp);
-}
-
-void	key(void *all)
-{
-	t_game	*tmp;
-
-	tmp = all;
-	if (mlx_is_key_down(tmp->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(tmp->mlx);
-	if (mlx_is_key_down(tmp->mlx, MLX_KEY_W))
-		tmp->assets.noonoo->instances[0].y -= 64;
-	if (mlx_is_key_down(tmp->mlx, MLX_KEY_S))
-		tmp->assets.noonoo->instances[0].y += 64;
-	if (mlx_is_key_down(tmp->mlx, MLX_KEY_A))
-		tmp->assets.noonoo->instances[0].x -= 64;
-	if (mlx_is_key_down(tmp->mlx, MLX_KEY_D))
-		tmp->assets.noonoo->instances[0].x += 64;
 }
 
 int32_t	main(int argc, char **argv)
@@ -65,6 +48,13 @@ int32_t	main(int argc, char **argv)
 	load_assets(&all);
 	mlx_loop_hook(all.mlx, &hook, &all);
 	mlx_key_hook(all.mlx, &key_hook_move, &all);
+	int i = 0;
+	while (i < 5)
+	{
+		printf("%s\n",all.s_map[i]);
+		i++;
+	}
+	
 	mlx_loop(all.mlx);
 	mlx_terminate(all.mlx);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/14 18:09:40 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 10:52:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void		move_up(t_game *all);
 void		move_down(t_game *all);
 void		move_left(t_game *all);
 void		move_right(t_game *all);
-void	key_hook_move(mlx_key_data_t key, void *tmp);
+int			check_flag(char *c1, char *c2);
+void		key_hook_move(mlx_key_data_t key, void *tmp);
+
 #endif
