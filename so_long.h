@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 10:52:17 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 12:48:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_assets
 {
 	mlx_image_t	*banana;
 	mlx_image_t	*home;
+	mlx_image_t	*open_home;
 	mlx_image_t	*noonoo;
 	mlx_image_t	*rice_ball;
 	mlx_image_t	*wall;
@@ -37,10 +38,15 @@ typedef struct s_game
 	int		colums;
 	int		screen_x;
 	int		screen_y;
+	int		c_count;
+	int		E_x;
+	int		E_y;
+	int		move_count;
 }t_game;
 
 char		*read_map(char *map_path);
 void		count_rows_colums(char **str, t_game *all);
+void		count_c_e(char **str, t_game *all);
 mlx_image_t	*xpm_to_image(mlx_t *mlx, char	*img_path);
 void		load_assets(t_game *all);
 void		delete_old_assets(t_game *all);
@@ -51,7 +57,7 @@ void		move_up(t_game *all);
 void		move_down(t_game *all);
 void		move_left(t_game *all);
 void		move_right(t_game *all);
-int			check_flag(char *c1, char *c2);
+int			check_flag(t_game *all, char *c1, char *c2);
 void		key_hook_move(mlx_key_data_t key, void *tmp);
 
 #endif

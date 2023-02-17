@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 10:56:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 12:47:10 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	move_up(t_game *all);
 void	move_down(t_game *all);
 void	move_left(t_game *all);
 void	move_right(t_game *all);
-int		check_flag(char *c1, char *c2);
+int		check_flag(t_game *all, char *c1, char *c2);
 
 void	move_up(t_game *all)
 {
@@ -29,7 +29,7 @@ void	move_up(t_game *all)
 		x = -1;
 		while (++x < all->rows)
 		{
-			if (check_flag(&all->s_map[y][x], &all->s_map[y - 1][x]) == 1)
+			if (check_flag(all, &all->s_map[y][x], &all->s_map[y - 1][x]) == 1)
 				return ;
 		}
 	}
@@ -46,7 +46,7 @@ void	move_down(t_game *all)
 		x = -1;
 		while (++x < all->rows)
 		{
-			if (check_flag(&all->s_map[y][x], &all->s_map[y + 1][x]) == 1)
+			if (check_flag(all, &all->s_map[y][x], &all->s_map[y + 1][x]) == 1)
 				return ;
 		}
 	}
@@ -63,7 +63,7 @@ void	move_left(t_game *all)
 		x = -1;
 		while (++x < all->rows)
 		{
-			if (check_flag(&all->s_map[y][x], &all->s_map[y][x - 1]) == 1)
+			if (check_flag(all, &all->s_map[y][x], &all->s_map[y][x - 1]) == 1)
 				return ;
 		}
 	}
@@ -80,20 +80,30 @@ void	move_right(t_game *all)
 		x = -1;
 		while (++x < all->rows)
 		{
-			if (check_flag(&all->s_map[y][x], &all->s_map[y][x + 1]) == 1)
+			if (check_flag(all, &all->s_map[y][x], &all->s_map[y][x + 1]) == 1)
 				return ;
 		}
 	}
 }
 
-int	check_flag(char *c1, char *c2)
+int	check_flag(t_game *all, char *c1, char *c2)
 {
 	if (*c1== 'P')
 		{
-			if (*c2 == '0' || *c2 == 'C' || *c2 == 'E')
+			if (*c2 == '0' || *c2 == 'C' || *c2 == 'E'|| *c2 == 'e')
 			{
-				*c2 = 'P';
-				*c1 = '0';
+				if (*c2 == 'C')
+					all->c_count--;
+				if (all->c_count == 0)
+					all->s_map[all->E_y][all->E_x] = 'e';
+				if (all->c_count == 0 && *c2 == 'e')
+					exit(0);
+				if (*c2 != 'E')
+				{
+					all->move_count++;
+					*c2 = 'P';
+					*c1 = '0';
+				}
 				return (1);
 			}
 		}

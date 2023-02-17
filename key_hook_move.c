@@ -6,12 +6,11 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:59:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 10:54:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/17 11:45:34 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	key_hook_move(mlx_key_data_t key, void *tmp);
 
