@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 14:22:15 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 10:08:48 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 10:24:54 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	check_wall(t_game *all)
 		while (x < all->rows)
 		{
 			if(x == 0 && all->s_map[y][x] != '1')
-				print_error(all);
+				{ft_printf("1\n");print_error(all);}
 			if(y == 0 && all->s_map[y][x] != '1')
-				print_error(all);
+				{ft_printf("2\n");print_error(all);}
 			if(y == all->colums - 1 && all->s_map[y][x] != '1')
-				print_error(all);
+				{ft_printf("3\n");print_error(all);}
 			if(x == all->rows - 1 && all->s_map[y][x] != '1')
-				print_error(all);
+				{ft_printf("4\n");print_error(all);}
 			x++;
 		}
 		y++;
@@ -71,12 +71,12 @@ void	check_error(t_game *all)
 	y = 0;
 	count_rows_colums(all->s_map, all);
 	count_c_e_p(all->s_map, all);
-	if (all->c_count > 1 || all->e_count != 1 || all->p_count != 1)
-		print_error(all);
+	if (all->c_count < 1 || all->e_count != 1 || all->p_count != 1)
+		{ft_printf("6\n");print_error(all);}
 	while(all->s_map[y])
 	{
 		if(ft_strlen(all->s_map[y]) != all->rows)
-			print_error(all);
+			{ft_printf("5\n");print_error(all);}
 		y++;
 	}
 	check_wall(all);
