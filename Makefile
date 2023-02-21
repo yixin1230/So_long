@@ -6,26 +6,35 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/21 12:54:47 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/21 16:07:38 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+B_NAME = so_long_bonus
 CC = gcc
 FLAG = -Werror -Wall -Wextra
 LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
 LIB = MLX42/libmlx42.a
 FT_PRINTF = ft_printf/libftprintf.a
 SRC_DIR = src/
+BONUS_DIR = bonus/
 SRC = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c\
 		check_error.c check_path.c
+BONUS = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c\
+		check_error.c check_path.c
 SRC_PATH = ${SRC:%=${SRC_DIR}%}
+BONUS_PATH = ${SRC:%=${BONUS_DIR}%}
 
 
 all: ${NAME}
+bonus:${B_NAME}
 
 ${NAME}: ${SRC_PATH} ${LIB} ${FT_PRINTF}
 	@${CC} ${FLAG} ${LIB} ${FT_PRINTF} ${LINKS} ${SRC_PATH} -o ${NAME}
+
+${B_NAME}: ${BONUS_PATH} ${LIB} ${FT_PRINTF}
+	@${CC} ${FLAG} ${LIB} ${FT_PRINTF} ${LINKS} ${BONUS_PATH} -o ${B_NAME}
 
 ${LIB}:
 	@make -C MLX42
