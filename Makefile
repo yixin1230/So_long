@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/21 09:27:05 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/21 12:54:47 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIB = MLX42/libmlx42.a
 FT_PRINTF = ft_printf/libftprintf.a
 SRC_DIR = src/
 SRC = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c\
-		check_error.c
+		check_error.c check_path.c
 SRC_PATH = ${SRC:%=${SRC_DIR}%}
 
 

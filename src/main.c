@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 09:55:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 15:54:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,9 @@ int32_t	main(int argc, char **argv)
 	if (argc != 2)
 		exit (1);
 	map = read_map(argv[1]);
-	all.s_map = ft_split(map, '\n');
+	check_error(&all, map);
 	free(map);
-	check_error(&all);
-	all.mlx = mlx_init(64 * all.rows, 64 * all.colums, "NooNoo", 1);
+	all.mlx = mlx_init(64 * all.rows, 64 * all.colums, "Game", 1);
 	if (!all.mlx)
 		exit(1);
 	load_assets(&all);
