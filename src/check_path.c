@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/21 12:05:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 15:49:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 16:00:48 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_path_flag(t_game *all, int x, int y)
 	check_path_flag(all, x - 1, y);
 }
 
-void check_path(t_game *all)
+void	check_path(t_game *all)
 {
 	int	x;
 	int	y;
