@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 17:19:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 10:09:30 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void		move_left(t_game *all);
 void		move_right(t_game *all);
 int			check_flag(t_game *all, char *c1, char *c2);
 void		key_hook_move(mlx_key_data_t key, void *tmp);
-void		print_error(void);
+void		print_error(t_game *all);
 void		check_error(t_game *all);
+void		free_smap(t_game *all);
 void		check_wall(t_game *all);
 #endif
