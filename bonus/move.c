@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 12:02:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 16:33:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	move_up(t_game *all)
 	int	y;
 
 	y = -1;
+	all->move_d = 'w';
 	while (++y < all->colums)
 	{
 		x = -1;
@@ -41,6 +42,7 @@ void	move_down(t_game *all)
 	int	y;
 
 	y = -1;
+	all->move_d = 's';
 	while (++y < all->colums)
 	{
 		x = -1;
@@ -58,6 +60,7 @@ void	move_left(t_game *all)
 	int	y;
 
 	y = -1;
+	all->move_d = 'a';
 	while (++y < all->colums)
 	{
 		x = -1;
@@ -75,6 +78,7 @@ void	move_right(t_game *all)
 	int	y;
 
 	y = -1;
+	all->move_d = 'd';
 	while (++y < all->colums)
 	{
 		x = -1;
@@ -110,6 +114,11 @@ in %i moves!\n", all->move_count);
 				*c1 = '0';
 			}
 			return (1);
+		}
+		if (*c2 == 'X')
+		{
+			ft_printf("You lose\n");
+			exit(0);
 		}
 	}
 	return (0);

@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/21 16:07:38 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/21 16:08:37 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ BONUS_PATH = ${SRC:%=${BONUS_DIR}%}
 
 
 all: ${NAME}
+
 bonus:${B_NAME}
 
 ${NAME}: ${SRC_PATH} ${LIB} ${FT_PRINTF}

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:22:00 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 13:55:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 18:50:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	print_image(t_game *all, int x, int y)
 		mlx_image_to_window(all->mlx, all->assets.open_home, x * 64, y * 64);
 	else if (all->s_map[y][x] == 'P')
 		mlx_image_to_window(all->mlx, all->assets.noonoo, x * 64, y * 64);
+	else if (all->s_map[y][x] == 'X')
+		mlx_image_to_window(all->mlx, all->assets.banana, x * 64, y * 64);
 }
 
 void	print_all_map(t_game *all)
