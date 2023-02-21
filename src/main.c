@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 15:20:04 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 09:55:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	leaks(void)
 {
-	system("leaks -q game");
+	system("leaks -q so_long");
 }
 
 void	hook(void *all)

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 14:22:15 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/17 17:19:26 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 09:49:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	check_wall(t_game *all);
 void	print_error(void)
 {
 	ft_printf("Error\n");
+	//free();
 	exit(1);
 }
 

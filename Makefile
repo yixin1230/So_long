@@ -6,11 +6,11 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/17 14:56:47 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/21 09:27:05 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = game
+NAME = so_long
 CC = gcc
 FLAG = -Werror -Wall -Wextra
 LINKS = -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit

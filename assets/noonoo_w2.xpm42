@@ -1,0 +1,129 @@
+!XPM42
+64 64 63 1 c
+  #00000000
+. #000000FF
+X #010101FF
+o #020202FF
+O #30303FF
++ #040404FF
+@ #060606FF
+# #D35618FF
+$ #E8641BFF
+% #CC0049FF
+& #CD0049FF
+* #D3004CFF
+= #DD0050FF
+- #E10052FF
+; #D98600FF
+: #D98700FF
+> #DA8700FF
+, #DA8800FF
+< #DB8800FF
+1 #DC8900FF
+2 #DD8B00FF
+3 #DF8D00FF
+4 #E08D00FF
+5 #E28F00FF
+6 #E29000FF
+7 #E69300FF
+8 #E99600FF
+9 #EA9700FF
+0 #ED9A00FF
+q #EF9C00FF
+w #F1AA25FF
+e #DCB4ACFF
+r #DDB4ADFF
+t #DEB5AEFF
+y #DEB6AEFF
+u #DFB6AEFF
+i #DFB6AFFF
+p #DFB7AFFF
+a #E0B8B0FF
+s #E1B9B1FF
+d #E3BCB3FF
+f #E4BDB3FF
+g #E4BEB4FF
+h #E8C2B7FF
+j #E9C4B9FF
+k #EBC6BAFF
+l #ECC7BBFF
+z #F1D0C1FF
+x #F2D1C2FF
+c #F3D1C2FF
+v #F4D2C3FF
+b #F5D3C4FF
+n #E7DBE2FF
+m #F0E9EDFF
+M #F1EAEEFF
+N #F7F3F5FF
+B #F8F5F7FF
+V #FBF9FAFF
+C #FDFBFCFF
+Z #FDFCFDFF
+A #FEFDFEFF
+S #FEFEFEFF
+D #FFFFFFFF
+                    ........................                    
+                   ..jbbbbbbbbbbbbbbbbbbbbb..                   
+                  ..plbbb$$$bb$$bb$$$b$$bbbt..                  
+                  .tp$$bb$$$bb$$bb$$$b$$b$$tt.                  
+                  .ta$$bb$$$bb$$bb$$$b$$b$$tt.                  
+                  .ta$$bb$$$bb$$bb$$$b$$b$$tt.                  
+                  .ta$$bb$$$bbbbbbbbbb$$b$$tt.                  
+                  .tp$$bbbbbbbbbbbbbbbbbb$$tt.                  
+                  .tplbbbbbbbb--------bbbbbtt.                  
+                  .ttjbbb------bbbbbb----bbtt.                  
+                  .tth---bbbbbbbbbvbbbbbb---t.                  
+                  .t%*-vvbbbbbbbbbbbbbbbbbb-%.                  
+                  .%%fbbbbbbbbbbbbbbbbbbbbbbt.                  
+                  .%tdbbbvbbbbbbbbbvvbbbbbbtt.                  
+                  .ttgbbbvbbbbbbbvbbvbbbbbbtt.                  
+                  .ttjbbbvbbbbbbbbbbbbbzbbbtt.                  
+                  .tahbbbbbbbbbbbbbbbbbzbbbtt.                  
+                  .tahbbbbbbbbbbbbbbbbbbbbbtt.                  
+                  .tahbbbbbbbbbbbbbbbbbbbbbtt.                  
+                  .tahbbbvbbbbbbbbbbbbbbbbbtt.                  
+                  .tahbbbbbbbbbbbbbbbbbbbbbtt.                  
+                ...tahbbbbbbbbbbbbbbbbbbbbbtt...                
+               ..tttahbbbtttttttttttttttbbbtttt..               
+               .ttttahttttttttttttttattttbbbtttt.               
+               .ttttttttt------------ttttttttttt.               
+               .ttttt%---bbbbbbbbbbbb--------ttt.               
+               .tt---bbbbb$bbb$bb$bb$bb$bb$b--=t.               
+               .---ttb$bbb$ttt#tt#pj#tt#tb$bb$t%.               
+               .-t#ttb#ttttttttttttttttttttvb$tt.               
+               .tt#tttt....@.....@.........ttttt.               
+               .tttt....;,,2467BCCCDDCBmmq2....t.               
+               .tt...;;;;480qqqDDDDDDDDDDq042;...               
+               ...;;qqqqqqqqqqqDDDDDDDDDDqqqq;;;.               
+              ..;;qqqqqqqqqqqqqDDDDDDDDDDDqqqq;;..              
+              .;;;qqqqqqqqqqqqqDDDDDDDDDDDqqqqqq;.              
+              .;;qqqqqqqqqqqqqqDDDDDDDDDDDDqqqqq;..             
+              .;;qqqqqqqqqqqqqqDDDDDDDDDDDDDqqqqq;.             
+              .;,qqqqqqqqqqqq;;DDDDDDDDDDDDDDqqqq;.             
+              .;q8qqqqqqqqqqq;DDDDDDDDDDDDDDDDDqq;.             
+              .;qqqqqqqqqqqqq;DDDDDDDDDDDDDDDDDDD;.             
+              .;qqqqqqqqqqqq;DDDDDDDDDDDDDDDDDDDD..             
+              .;;qqqqqqqqqqq;DDDDDDDDDDDDDDDDDDDD.              
+              .;;qqqqqqqqqq;DDDDDDDDDDDDDDDDDDDDn.              
+               .;qqqqqqqqqqDD.DDDD..DDDDDDDDDDDDn.              
+               .;;qqqqqqqqDD..DDDDD..DDDDDDDDDDD..              
+                .;qqqqqqqqDD.DDDDDDD.DDDDDDDDDDn.               
+                .;;qqqqqDDDD.nnDDDDn.DDDDDDDDDDn.               
+                .nwwwwDDDDDD.nnnnnnn.DDDDDDDDDDn.               
+                .nDDDDDDDDDD..nnn...DDDDDDDDDDDD.               
+               ..;DDDDDDDDDDD..... ..nnnDDDDDDDDn.              
+               .qqDDDDDDDDDD..      ...nnDDDDDDDn.              
+              ..qqDDDDDDDD...         ..nDDDDDDDDn.             
+             ...;DDDDDDDD.             .nnDDDDDDDD..            
+             .n..DDDDDDD.               .nnDDDDDDDD.            
+             .nn.DDDDDDD.                .nDDDDDDDD.            
+             .nn.nDDDDDD.                ..nDDDDDDDD.           
+             ..nnnDDDDD.                  .nDDDDDDDD.           
+              ..nnnDDDD.                  .nDDDDDDDD.           
+               ..nnnnn..                  .nDDDDDDDD...         
+                .......                   ..nDDDDDDDDD..        
+                                           .nDDDDDDDDDn.        
+                                           .nDDDDDDDDDn.        
+                                           .nnnnnnnnnnn.        
+                                            ............        
