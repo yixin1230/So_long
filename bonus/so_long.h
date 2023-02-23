@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 18:46:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/23 12:24:11 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_game
 	int			move_count;
 	int			check_path;
 	char		move_d;
+	int			loop;
+	int			banana;
 }t_game;
 
 char		*read_map(char *map_path);
@@ -69,5 +71,6 @@ void		check_wall(t_game *all);
 void		check_path_flag(t_game *all, int x, int y);
 void		check_path(t_game *all);
 void		enemy_animation(t_game *all);
+void	animation_banana(t_game *all);
 
 #endif

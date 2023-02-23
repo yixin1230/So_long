@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 18:55:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/23 12:26:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	hook(void *all)
 	t_game	*tmp;
 
 	tmp = all;
+	tmp->loop++;
 	print_all_map(tmp);
 }
 
@@ -41,6 +42,7 @@ int32_t	main(int argc, char **argv)
 	all.mlx = mlx_init(64 * all.rows, 64 * all.colums, "Game", 1);
 	if (!all.mlx)
 		exit(1);
+	all.loop = 0;
 	load_assets(&all);
 	mlx_loop_hook(all.mlx, &hook, &all);
 	mlx_key_hook(all.mlx, &key_hook_move, &all);

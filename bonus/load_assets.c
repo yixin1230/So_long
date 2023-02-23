@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 12:19:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 18:48:06 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/23 12:44:16 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	load_assets(t_game *all);
 void	delete_old_assets(t_game *all);
 void	enemy_animation(t_game *all);
+void	animation_banana(t_game *all);
 
 void	load_assets(t_game *all)
 {
-	all->assets.banana = xpm_to_image(all->mlx, "assets/banana1.xpm42");
 	all->assets.home = xpm_to_image(all->mlx, "assets/come.xpm42");
 	if (all->move_d == 'w')
 		all->assets.noonoo = xpm_to_image(all->mlx, "assets/noonoo_w1.xpm42");
@@ -31,14 +31,25 @@ void	load_assets(t_game *all)
 	all->assets.rice_ball = xpm_to_image(all->mlx, "assets/rice_ball.xpm42");
 	all->assets.wall = xpm_to_image(all->mlx, "assets/wall.xpm42");
 	all->assets.open_home = xpm_to_image(all->mlx, "assets/home.xpm42");
+	animation_banana(all);
 }
 
-/* void	enemy_animation(t_game *all)
+
+void	animation_banana(t_game *all)
 {
-	all->assets.banana[0] = xpm_to_image(all->mlx, "assets/banana1.xpm42");
-	all->assets.banana[1] = xpm_to_image(all->mlx, "assets/banana2.xpm42");
-	all->assets.banana[2] = xpm_to_image(all->mlx, "assets/banana3.xpm42");
-}  */
+	int	speed;
+
+	speed = 24;
+	all->banana = all->loop % speed;
+	if (all->banana >= 4 && all->banana < 8)
+		all->assets.banana = xpm_to_image(all->mlx, "./assets/banana1.xpm42");
+	else if (all->banana >= 12 && all->banana < 16)
+		all->assets.banana = xpm_to_image(all->mlx, "./assets/banana2.xpm42");
+	else if (all->banana >= 20 && all->banana < 24)
+		all->assets.banana = xpm_to_image(all->mlx, "./assets/banana3.xpm42");
+	else
+		all->assets.banana = xpm_to_image(all->mlx, "./assets/banana2.xpm42");
+}
 
 void	delete_old_assets(t_game *all)
 {
