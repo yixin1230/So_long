@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/23 12:26:15 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/23 15:14:13 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	hook(void *all)
 	t_game	*tmp;
 
 	tmp = all;
-	tmp->loop++;
+	
 	print_all_map(tmp);
+	banana_move(tmp);
+	tmp->loop++;
 }
 
 int32_t	main(int argc, char **argv)

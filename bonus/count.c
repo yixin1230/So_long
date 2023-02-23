@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 10:41:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 16:20:25 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/23 13:34:46 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	count_c_e_p(char **str, t_game *all)
 	int	y;
 
 	y = -1;
+	all->c_count = 0;
+	all->e_count = 0;
+	all->p_count = 0;
 	while (++y < all->colums)
 	{
 		x = -1;

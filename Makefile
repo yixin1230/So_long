@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/25 18:15:26 by yizhang       #+#    #+#                  #
-#    Updated: 2023/02/21 16:08:37 by yizhang       ########   odam.nl          #
+#    Updated: 2023/02/23 13:43:18 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ BONUS_DIR = bonus/
 SRC = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c\
 		check_error.c check_path.c
 BONUS = main.c read_map.c count.c load_assets.c print_image.c move.c key_hook_move.c\
-		check_error.c check_path.c
+		check_error.c check_path.c animation.c animation_banana.c
 SRC_PATH = ${SRC:%=${SRC_DIR}%}
-BONUS_PATH = ${SRC:%=${BONUS_DIR}%}
+BONUS_PATH = ${BONUS:%=${BONUS_DIR}%}
 
 
 all: ${NAME}
