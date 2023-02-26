@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 16:33:29 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 15:20:12 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,11 @@ int	check_flag(t_game *all, char *c1, char *c2)
 				all->s_map[all->e_y][all->e_x] = 'e';
 			all->move_count++;
 			ft_printf("move:%i\n", all->move_count);
+			all->old_text = all->text;
+			put_sting(all);
+			delete_string(all);
 			if (all->c_count == 0 && *c2 == 'e')
-			{
-				ft_printf("Congratulations! You completed the game\
-in %i moves!\n", all->move_count);
-				exit(0);
-			}
+				all->win_lose = 1;
 			if (*c2 != 'E')
 			{
 				*c2 = 'P';
@@ -116,10 +115,7 @@ in %i moves!\n", all->move_count);
 			return (1);
 		}
 		if (*c2 == 'X')
-		{
-			ft_printf("You lose\n");
-			exit(0);
-		}
+			all->win_lose = -1;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 13:42:38 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/23 15:18:48 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 15:22:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,22 @@ void	banana_move(t_game *all)
 				if (all->s_map[y][x] == 'X')
 				{
 					if(all->s_map[y][x + 1] == '0' || all->s_map[y][x + 1] == 'P')
-					{if (all->s_map[y][x+1] == 'P')
+					{
+						if (all->s_map[y][x + 1] == 'P')
 						{
 							ft_printf("you lose\n");
-							exit(0);
+							all->win_lose = -1;
 						}
 						all->s_map[y][x + 1] = 'X';
 						all->s_map[y][x] = '0';
 						return ;
 					}
-					else if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0') || all->s_map[y][x - 1] == 'P')
-					{if (all->s_map[y][x - 1] == 'P')
+					else// if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0') || all->s_map[y][x - 1] == 'P')
+					{
+						if (all->s_map[y][x - 1] == 'P')
 						{
 							ft_printf("you lose\n");
-							exit(0);
+							all->win_lose = -1;
 						}
 						all->s_map[y][x - 1] = 'X';
 						all->s_map[y][x] = '0';

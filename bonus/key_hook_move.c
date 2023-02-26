@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:59:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/23 15:14:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 15:27:06 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	key_hook_move(mlx_key_data_t keydata, void *tmp)
 	t_game	*all;
 
 	all = tmp;
+	all->old_text = all->text;
+	put_sting(all);
+	delete_string(all);
 	if (keydata.action != MLX_PRESS)
 		return ;
 	if (keydata.key == MLX_KEY_ESCAPE)

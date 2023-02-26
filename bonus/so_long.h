@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/23 15:18:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 15:18:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,23 @@ typedef struct s_assets
 	mlx_image_t	*wall;
 }t_assets;
 
+typedef struct s_text
+{
+	mlx_image_t	*move_s;
+	mlx_image_t	*move_nb;
+	mlx_image_t	*c_nb;
+	mlx_image_t	*c_s;
+	mlx_image_t	*win_lose;
+}t_text;
+
 typedef struct s_game
 {
 	mlx_t		*mlx;
 	char		**s_map;
 	t_assets	assets;
 	t_assets	old_assets;
+	t_text		text;
+	t_text		old_text;
 	int			rows;
 	int			colums;
 	int			c_count;
@@ -48,6 +59,7 @@ typedef struct s_game
 	int			banana;
 	int			noonoo;
 	int			banana_move;
+	int			win_lose;
 }t_game;
 
 char		*read_map(char *map_path);
@@ -79,5 +91,8 @@ void		animation_noonoo_d(t_game *all);
 void		animation_noonoo_a(t_game *all);
 void		animation_noonoo_s(t_game *all);
 void		banana_move(t_game *all);
+void		put_str_on_window(t_game *all);
+void		put_sting(t_game *all);
+void		delete_string(t_game *all);
 
 #endif
