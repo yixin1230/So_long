@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 13:42:38 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 18:55:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 19:37:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ void	banana_move_utils(t_game *all, int x, int y)
 		|| all->s_map[y][x - 1] == 'P')
 	{
 		if (all->b_right == 0 && all->b_left == 0)
+		{
 			swap_x(all, &all->s_map[y][x], &all->s_map[y][x + 1], 0);
+			return ;
+		}
 		else if (all->b_right == 0 && all->b_left == 1)
 			all->b_nb = x - 1;
 		else if (all->b_right == 1 && all->b_left == 0)
