@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 15:18:33 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 17:39:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ typedef struct s_game
 	int			noonoo;
 	int			banana_move;
 	int			win_lose;
+	int			b_right;
+	int			b_left;
+	int			b_nb;
 }t_game;
 
 char		*read_map(char *map_path);

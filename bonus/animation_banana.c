@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 13:42:38 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 15:22:15 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 17:43:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	banana_move(t_game *all)
 	int	speed;
 
 	y = -1;
-	speed = 90;
+	speed = 25;
 	all->banana = all->loop % speed;
 	if (all->banana == 3)
 	{
@@ -49,30 +49,50 @@ void	banana_move(t_game *all)
 			{
 				if (all->s_map[y][x] == 'X')
 				{
-					if(all->s_map[y][x + 1] == '0' || all->s_map[y][x + 1] == 'P')
+					if ((all->s_map[y][x + 1] == '0' && all->s_map[y][x - 1] != '0') || all->s_map[y][x + 1] == 'P')
 					{
 						if (all->s_map[y][x + 1] == 'P')
-						{
-							ft_printf("you lose\n");
 							all->win_lose = -1;
-						}
 						all->s_map[y][x + 1] = 'X';
 						all->s_map[y][x] = '0';
+						all->b_right = 1;
+						all->b_left = 0;
 						return ;
 					}
-					else// if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0') || all->s_map[y][x - 1] == 'P')
+					if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0')|| all->s_map[y][x - 1] == 'P')
 					{
 						if (all->s_map[y][x - 1] == 'P')
-						{
-							ft_printf("you lose\n");
 							all->win_lose = -1;
-						}
 						all->s_map[y][x - 1] = 'X';
 						all->s_map[y][x] = '0';
+						all->b_right = 0;
+						all->b_left = 1;
 						return ;
+					}
+					if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] == '0')|| all->s_map[y][x - 1] == 'P')
+					{
+						if (all->b_right == 0 && all->b_left == 0)
+						{
+							if (all->s_map[y][all->b_nb] == 'P')
+								all->win_lose = -1;
+							all->s_map[y][all->b_nb] = 'X';
+							all->s_map[y][x] = '0';
+							return ;
+						}
+						else if (all->b_right == 0 && all->b_left == 1)
+							all->b_nb = x - 1;
+						else if (all->b_right == 1 && all->b_left == 0)
+							all->b_nb = x + 1;
+						if (all->s_map[y][all->b_nb] == 'P')
+								all->win_lose = -1;
+							all->s_map[y][all->b_nb] = 'X';
+							all->s_map[y][x] = '0';
+							return ;
 					}
 				}
 			}
 		}
 	}
 }
+
+void	swap_x(char *c1,char *c2)

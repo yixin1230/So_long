@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 15:16:25 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 17:40:21 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int32_t	main(int argc, char **argv)
 	if (!all.mlx)
 		exit(1);
 	all.loop = 0;
+	all.b_right = 0;
+	all.b_left = 0;
+	all.b_nb = 0;
 	load_assets(&all);
 	put_str_on_window(&all);
 	mlx_loop_hook(all.mlx, &hook, &all);
