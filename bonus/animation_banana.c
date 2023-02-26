@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/23 13:42:38 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 17:43:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 18:55:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	animation_banana(t_game *all);
 void	banana_move(t_game *all);
+void	swap_x(t_game *all, char *c1, char *c2, int i);
+void	banana_move_utils(t_game *all, int x, int y);
 
 void	animation_banana(t_game *all)
 {
@@ -49,50 +51,50 @@ void	banana_move(t_game *all)
 			{
 				if (all->s_map[y][x] == 'X')
 				{
-					if ((all->s_map[y][x + 1] == '0' && all->s_map[y][x - 1] != '0') || all->s_map[y][x + 1] == 'P')
-					{
-						if (all->s_map[y][x + 1] == 'P')
-							all->win_lose = -1;
-						all->s_map[y][x + 1] = 'X';
-						all->s_map[y][x] = '0';
-						all->b_right = 1;
-						all->b_left = 0;
-						return ;
-					}
-					if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0')|| all->s_map[y][x - 1] == 'P')
-					{
-						if (all->s_map[y][x - 1] == 'P')
-							all->win_lose = -1;
-						all->s_map[y][x - 1] = 'X';
-						all->s_map[y][x] = '0';
-						all->b_right = 0;
-						all->b_left = 1;
-						return ;
-					}
-					if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] == '0')|| all->s_map[y][x - 1] == 'P')
-					{
-						if (all->b_right == 0 && all->b_left == 0)
-						{
-							if (all->s_map[y][all->b_nb] == 'P')
-								all->win_lose = -1;
-							all->s_map[y][all->b_nb] = 'X';
-							all->s_map[y][x] = '0';
-							return ;
-						}
-						else if (all->b_right == 0 && all->b_left == 1)
-							all->b_nb = x - 1;
-						else if (all->b_right == 1 && all->b_left == 0)
-							all->b_nb = x + 1;
-						if (all->s_map[y][all->b_nb] == 'P')
-								all->win_lose = -1;
-							all->s_map[y][all->b_nb] = 'X';
-							all->s_map[y][x] = '0';
-							return ;
-					}
+					banana_move_utils(all, x, y);
+					return ;
 				}
 			}
 		}
 	}
 }
 
-void	swap_x(char *c1,char *c2)
+void	swap_x(t_game *all, char *c1, char *c2, int i)
+{
+	if (*c2 == 'P')
+		all->win_lose = -1;
+	*c2 = 'X';
+	*c1 = '0';
+	if (i == 1)
+	{
+		all->b_right = 1;
+		all->b_left = 0;
+	}
+	else if (i == 2)
+	{
+		all->b_right = 0;
+		all->b_left = 1;
+	}
+}
+
+void	banana_move_utils(t_game *all, int x, int y)
+{
+	if ((all->s_map[y][x + 1] == '0' && all->s_map[y][x - 1] != '0')
+		|| all->s_map[y][x + 1] == 'P')
+		swap_x(all, &all->s_map[y][x], &all->s_map[y][x + 1], 1);
+	else if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] != '0')
+		|| all->s_map[y][x - 1] == 'P')
+		swap_x(all, &all->s_map[y][x], &all->s_map[y][x - 1], 2);
+	else if ((all->s_map[y][x - 1] == '0' && all->s_map[y][x + 1] == '0')
+		|| all->s_map[y][x - 1] == 'P')
+	{
+		if (all->b_right == 0 && all->b_left == 0)
+			swap_x(all, &all->s_map[y][x], &all->s_map[y][x + 1], 0);
+		else if (all->b_right == 0 && all->b_left == 1)
+			all->b_nb = x - 1;
+		else if (all->b_right == 1 && all->b_left == 0)
+			all->b_nb = x + 1;
+		swap_x(all, &all->s_map[y][x], &all->s_map[y][all->b_nb], 0);
+		return ;
+	}
+}

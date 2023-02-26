@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:59:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 15:27:06 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 18:47:50 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ void	key_hook_move(mlx_key_data_t keydata, void *tmp)
 		move_right(all);
 	if (keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT)
 		move_left(all);
-	
 }

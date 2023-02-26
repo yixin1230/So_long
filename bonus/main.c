@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 17:40:21 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 18:47:28 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 #include <stdio.h>
 #include <string.h>
 
-static void	leaks(void)
-{
-	system("leaks -q so_long");
-}
-
 void	hook(void *all)
 {
 	t_game	*tmp;
 
 	tmp = all;
-	
 	print_all_map(tmp);
 	banana_move(tmp);
 	tmp->loop++;
@@ -35,7 +29,6 @@ int32_t	main(int argc, char **argv)
 	char	*map;
 	t_game	all;
 
-	atexit(leaks);
 	if (argc != 2)
 		exit (1);
 	map = read_map(argv[1]);

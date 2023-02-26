@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 15:20:12 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 18:29:16 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	move_up(t_game *all);
 void	move_down(t_game *all);
 void	move_left(t_game *all);
 void	move_right(t_game *all);
-int		check_flag(t_game *all, char *c1, char *c2);
 
 void	move_up(t_game *all)
 {
@@ -88,34 +87,4 @@ void	move_right(t_game *all)
 				return ;
 		}
 	}
-}
-
-int	check_flag(t_game *all, char *c1, char *c2)
-{
-	if (*c1 == 'P')
-	{
-		if (*c2 == '0' || *c2 == 'C' || *c2 == 'E' || *c2 == 'e')
-		{
-			if (*c2 == 'C')
-				all->c_count--;
-			if (all->c_count == 0)
-				all->s_map[all->e_y][all->e_x] = 'e';
-			all->move_count++;
-			ft_printf("move:%i\n", all->move_count);
-			all->old_text = all->text;
-			put_sting(all);
-			delete_string(all);
-			if (all->c_count == 0 && *c2 == 'e')
-				all->win_lose = 1;
-			if (*c2 != 'E')
-			{
-				*c2 = 'P';
-				*c1 = '0';
-			}
-			return (1);
-		}
-		if (*c2 == 'X')
-			all->win_lose = -1;
-	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/29 15:00:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 17:39:43 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/26 18:55:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,9 @@ void		banana_move(t_game *all);
 void		put_str_on_window(t_game *all);
 void		put_sting(t_game *all);
 void		delete_string(t_game *all);
+void		swap_x(t_game *all, char *c1, char *c2, int i);
+void		check_flag_utils(t_game *all);
+void		put_string_utils(t_game *all);
+void		banana_move_utils(t_game *all, int x, int y);
 
 #endif
