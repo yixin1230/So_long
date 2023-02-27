@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 14:22:15 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/23 13:40:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 09:07:57 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	check_error(t_game *all, char *map)
 
 	y = 0;
 	all->s_map = ft_split(map, '\n');
+	if (!*(all->s_map))
+		print_error(all);
 	count_rows_colums(all->s_map, all);
 	count_c_e_p(all->s_map, all);
 	if (all->c_count < 1 || all->e_count != 1 || all->p_count != 1)

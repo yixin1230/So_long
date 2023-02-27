@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/31 12:17:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/27 08:26:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 08:32:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*read_map(char *map_path)
 	if (fd < 0)
 	{
 		ft_printf("Map Error\n");
-		exit(0);
+		exit(1);
 	}
 	count = 0;
 	while (read(fd, &c, 1) == 1)
