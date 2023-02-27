@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/21 12:05:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 18:21:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 09:22:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	check_path(t_game *all)
 					free_smap(all);
 					return ;
 				}
-				print_error(all);
+				print_error(all, "path error\n");
 				return ;
 			}
 			x++;
