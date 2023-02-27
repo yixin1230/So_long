@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/26 14:01:03 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/26 18:46:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 08:13:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	put_sting(t_game *all)
 		all->text.win_lose = mlx_put_string(all->mlx,
 				"You lose!", 4, all->colums * 64 + 60);
 		ft_printf("you lose\n");
+		exit(0);
 	}
 }
 
