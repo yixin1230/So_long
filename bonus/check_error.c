@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 14:22:15 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/27 09:29:35 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 12:24:42 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	free_smap(t_game *all)
 
 void	print_error(t_game *all, char *str)
 {
-	ft_printf("Error\n%s",str);
+	ft_printf("Error\n%s", str);
 	free_smap(all);
 	exit(1);
 }
