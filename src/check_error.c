@@ -6,13 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/17 14:22:15 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/27 09:25:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 11:40:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	print_error(t_game *all,char *str);
+void	print_error(t_game *all, char *str);
 void	check_error(t_game *all, char *map);
 void	check_wall(t_game *all);
 void	free_smap(t_game *all);
@@ -31,9 +31,9 @@ void	free_smap(t_game *all)
 		free(all->s_map);
 }
 
-void	print_error(t_game *all,char *str)
+void	print_error(t_game *all, char *str)
 {
-	ft_printf("Error\n%s",str);
+	ft_printf("Error\n%s", str);
 	free_smap(all);
 	exit(1);
 }
