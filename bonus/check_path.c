@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/21 12:05:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 16:00:48 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 09:22:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	check_path_flag(t_game *all, int x, int y)
 {
 	if (all->s_map[y][x] == '1' || x <= 0 || x >= all->rows
 		|| y <= 0 || y >= all->colums || all->s_map[y][x] == 'E'
-		|| all->s_map[y][x] == 'A' || all->s_map[y][x] == 'c')
+		|| all->s_map[y][x] == 'A' || all->s_map[y][x] == 'c'
+		|| all->s_map[y][x] == 'X')
 	{
 		if (all->s_map[y][x] == 'E')
 			all->check_path = 1;
@@ -55,7 +56,7 @@ void	check_path(t_game *all)
 					free_smap(all);
 					return ;
 				}
-				print_error(all);
+				print_error(all, "path error\n");
 				return ;
 			}
 			x++;

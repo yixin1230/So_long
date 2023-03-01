@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/13 12:19:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 09:55:13 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/21 16:13:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	delete_old_assets(t_game *all);
 
 void	load_assets(t_game *all)
 {
-	all->assets.banana = xpm_to_image(all->mlx, "assets/banana.xpm42");
 	all->assets.home = xpm_to_image(all->mlx, "assets/come.xpm42");
 	all->assets.noonoo = xpm_to_image(all->mlx, "assets/noonoo.xpm42");
 	all->assets.rice_ball = xpm_to_image(all->mlx, "assets/rice_ball.xpm42");
@@ -27,7 +26,6 @@ void	load_assets(t_game *all)
 
 void	delete_old_assets(t_game *all)
 {
-	mlx_delete_image(all->mlx, all->old_assets.banana);
 	mlx_delete_image(all->mlx, all->old_assets.home);
 	mlx_delete_image(all->mlx, all->old_assets.noonoo);
 	mlx_delete_image(all->mlx, all->old_assets.rice_ball);

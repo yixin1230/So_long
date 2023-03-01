@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/14 17:53:47 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 12:02:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 16:33:19 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	check_flag(t_game *all, char *c1, char *c2)
 			if (all->c_count == 0 && *c2 == 'e')
 			{
 				ft_printf("Congratulations! You completed the game\
-in %i moves!\n", all->move_count);
+ in %i moves!\n", all->move_count);
 				exit(0);
 			}
 			if (*c2 != 'E')

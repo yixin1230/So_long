@@ -6,18 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 18:33:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/02/21 15:54:29 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/02/27 09:00:48 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 #include <string.h>
-
-static void	leaks(void)
-{
-	system("leaks -q so_long");
-}
 
 void	hook(void *all)
 {
@@ -32,7 +27,6 @@ int32_t	main(int argc, char **argv)
 	char	*map;
 	t_game	all;
 
-	atexit(leaks);
 	if (argc != 2)
 		exit (1);
 	map = read_map(argv[1]);
