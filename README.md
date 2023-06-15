@@ -1,7 +1,7 @@
 # So_long
 
 ## About ##
-The first 2D game I create.
+The 2D game I create.
 
 In this project, I'll code a simple 2D game to get familiar with the MLX42 library and UI in general. 
 
